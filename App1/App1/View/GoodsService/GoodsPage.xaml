@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.GoodsPage" Title="Инфомация о товаре">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="{Binding Path=Model.CodeID, StringFormat='CodeID: {0}'}"/>
+                <Label Text="{Binding Path=Model.CodeGoods, StringFormat='Код товара: {0}'}"/>
+                <Label Text="{Binding Path=Model.BarCode, StringFormat='Штрихкод: {0}'}"/>
+                <Label Text="{Binding Path=Model.Boxes, StringFormat='Коробок: {0}'}"/>
+                <Label Text="{Binding Path=Model.Pallet, StringFormat='Паллет: {0}'}"/>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <!--<Button Text="Сохранить" Command="{Binding ViewModel.SaveGoodsCommand}" CommandParameter="{Binding Model}" />
+                <Button Text="Удалить" Command="{Binding ViewModel.DeleteGoodsCommand}" CommandParameter="{Binding Model}" />-->
+                <Button Text="Назад" Command="{Binding Path=ViewModel.BackCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

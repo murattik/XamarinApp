@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Account.LoginPincode" Title="Вход по PINCODE">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="20">
+
+            <Entry Text="{Binding PinCode}" 
+               Keyboard="Numeric" 
+               Placeholder="Введите PIN"
+               x:Name="pin"
+               IsPassword="True"
+               />
+
+            <Button Command="{Binding LoginPincodeCommand}"
+                Text="Войти"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="DeepSkyBlue"/>
+
+            <!--<StackLayout IsVisible="{Binding IsBusy}"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+                <Label Text="Загрузка данных..." TextColor="Gray" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Accent" >
+                </ActivityIndicator>
+            </StackLayout>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

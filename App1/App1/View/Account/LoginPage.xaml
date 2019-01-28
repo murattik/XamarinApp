@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Account.LoginPage" Title="Login">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="20">
+
+            <Entry Text="{Binding Login}" 
+               Placeholder="Login"
+               />
+
+            <Entry Text="{Binding Password}"
+               Keyboard="Numeric" 
+               Placeholder="Password"
+               IsPassword="True"
+               x:Name="pwd"/>
+
+            <Button Command="{Binding LoginCommand}"
+                Text="Войти"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="DeepSkyBlue"/>
+
+            <StackLayout IsVisible="{Binding IsBusy}"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+                <Label Text="Проверка данных..." TextColor="Gray" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Accent" >
+                </ActivityIndicator>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

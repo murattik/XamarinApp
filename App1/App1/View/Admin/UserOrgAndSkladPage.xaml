@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Account.UserOrgAndSkladPage" Title="Список клиентов доступных пользователю">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="UsersOrgAndSkladList" ItemsSource="{Binding UserOrgAndSklad}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding UserName, StringFormat='Имя пользователя: {0}'}" FontSize="Medium" />
+                                    <Label Text="{Binding NameOrg, StringFormat='Клиент: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding SkladName, StringFormat='Склад: {0}'}" FontSize="Small" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

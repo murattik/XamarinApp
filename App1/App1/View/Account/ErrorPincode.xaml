@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Account.ErrorPincode" Title="Ошибка!">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="20">
+            
+            <Label Text="Ошибка входа!"
+                FontSize="30"/>
+
+            <ListView x:Name="UsersList" ItemsSource="{Binding Users}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding MapsUserName, StringFormat='Текущий пользователь: {0}'}" FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Повторить ввод PIN" BackgroundColor="DeepSkyBlue" Clicked="LoginPincode" />
+            <Button Text="Авторизация" BackgroundColor="DeepSkyBlue" Clicked="Login" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

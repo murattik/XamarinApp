@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="App1.MapsGoodsDetails" Title="Информация о товаре">
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding CodeID,  StringFormat='CodeID: {0}'}" />
+            <Label Text="{Binding CodeGoods,  StringFormat='Код товара: {0}'}" />
+            <Label Text="{Binding BarCode,  StringFormat='Штрихкод: {0}'}" />
+            <Label Text="{Binding Boxes,  StringFormat='Коробок: {0}'}" />
+            <Label Text="{Binding Pallet,  StringFormat='Паллет: {0}'}" />
+
+            <!--<zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="100" BarcodeValue="{Binding BarCode}" BarcodeFormat="CODE_39">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="100" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>-->
+
+            <zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="100" BarcodeValue="{Binding BarCode}" BarcodeFormat="EAN_13">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="100" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+            <!--<zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="100" BarcodeValue="{Binding BarCode}" BarcodeFormat="QR_CODE">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="300" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>-->
+
+            <zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="100" BarcodeValue="{Binding BarCode}" BarcodeFormat="DATA_MATRIX">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="300" />
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                <!--<Button Text="Сохранить" BackgroundColor="Green" Clicked="SaveGoods" />
+                <Button Text="Удалить" BackgroundColor="Red" Clicked="DeleteGoods" />-->
+                <Button Text="Отмена" BackgroundColor="DeepSkyBlue" Clicked="Cancel" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

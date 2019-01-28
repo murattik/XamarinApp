@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Rotation.RotationListPage" Title="Ротация склада">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <!--<Button Text="Добавить" Command="{Binding CreateGoodsCommand}" IsEnabled="{Binding IsLoaded}" />-->
+            <SearchBar Placeholder="Поиск по коду..." TextChanged="SearchBar_OnTextChanged"></SearchBar>
+            <ListView x:Name="itemsList" ItemSelected="OnItemSelected" ItemsSource="{Binding}" HasUnevenRows="True" 
+                      SeparatorColor="Black" IsGroupingEnabled="True" IsPullToRefreshEnabled="True"> 
+                
+                <!--вывод заголовка группировки--> 
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout>
+                                <Label Text="{Binding Name, StringFormat='Варианты с рядом: {0}'}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                
+                <!--вывод списка-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding CodeGoodsF, StringFormat='CodeGoods: {0}'}" FontSize="Medium" HorizontalOptions="CenterAndExpand" />
+                                <Label Grid.Row="1" Text="{Binding Rfrom, StringFormat='Ряд отправить: {0}'}" FontSize="Small" />
+                                <Label Grid.Row="2" Text="{Binding ValidateF}" FontSize="Small" />
+                                <Label Grid.Row="3" Text="{Binding PartF, StringFormat='Партия: {0}'}" FontSize="Small" />
+
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Rto, StringFormat='Ряд получатель: {0}'}" FontSize="Small" TextColor="Red" HorizontalOptions="End" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding ValidateT }" FontSize="Small" TextColor="Red" HorizontalOptions="End"/>
+                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding PartT, StringFormat='Партия: {0}'}" FontSize="Small" TextColor="Red" HorizontalOptions="End"/>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<StackLayout IsVisible="{Binding IsBusy}"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+                <Label Text="Загрузка данных..." TextColor="Gray" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Accent" >
+                </ActivityIndicator>
+            </StackLayout>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

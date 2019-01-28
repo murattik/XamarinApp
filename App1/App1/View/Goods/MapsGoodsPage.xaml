@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MapsGoodsPage" Title="Список товаров">
+    <ListView x:Name="MapsGoodsList"
+            ItemsSource="{Binding}"
+            ItemSelected="OnItemSelected" HasUnevenRows="True">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout>
+                            <Label Text="{Binding CodeID, StringFormat='CodeID: {0}'}" FontSize="Large" TextColor="Black" />
+                            <Label Text="{Binding CodeGoods, StringFormat='Код товара: {0}'}" FontSize="Small" TextColor="Gray" />
+                            <Label Text="{Binding BarCode, StringFormat='Штрихкод: {0}'}" FontSize="Small" TextColor="Gray" />
+                            <Label Text="{Binding Boxes, StringFormat='Коробок: {0}'}" FontSize="Small" TextColor="Gray" />
+                            <Label Text="{Binding Pallet, StringFormat='Паллет: {0}'}" FontSize="Small" TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

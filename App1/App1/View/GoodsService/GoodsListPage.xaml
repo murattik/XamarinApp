@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.GoodsListPage" Title="Список товаров">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Button Text="Добавить" Command="{Binding CreateGoodsCommand}" IsEnabled="{Binding IsLoaded}" />-->
+            <ListView x:Name="goodsList" ItemsSource="{Binding Goods}"
+              SelectedItem="{Binding SelectedGoods, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding CodeID, StringFormat='CodeID: {0}'}" FontSize="Medium" />
+                                    <Label Text="{Binding CodeGoods, StringFormat='Код товара: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding BarCode, StringFormat='Штрихкод: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding Boxes, StringFormat='Коробок: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding Pallet, StringFormat='Паллет: {0}'}" FontSize="Small" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout IsVisible="{Binding IsBusy}"
+                    HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Padding="20">
+                <Label Text="Загрузка данных..." TextColor="Gray" HorizontalOptions="Center" />
+                <ActivityIndicator IsRunning="{Binding IsBusy}" Color="Accent" >
+                </ActivityIndicator>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

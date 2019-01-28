@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="App1.BarecodeResultPage" Title="{Binding TextResult,  StringFormat='Штрихкод: {0}'}">
+    <StackLayout>
+                                                              <!--страница просмотра элемента сканирования-->
+        <Label Text="{Binding dateTime,  StringFormat='Дата: {0}'}" />
+        <Label Text="{Binding Status,  StringFormat='Статус: {0}'}" />
+        <Label Text="{Binding BarecodeFormat,  StringFormat='Формат: {0}'}"  />
+        <Label Text="{Binding TextResult,  StringFormat='Штрихкод: {0}'}"  />
+        <Label Text="{Binding CodeGoods,  StringFormat='Код товара: {0}'}"  />
+        <Label Text="{Binding UserName,  StringFormat='Пользователь: {0}'}"  />
+        <!--<Label Text="Результат" />
+        <Editor Text="{Binding TextResult}" AutoSize="TextChanges" Keyboard="Chat" />-->
+        <!--<zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="100" BarcodeValue="{Binding TextResult}" BarcodeFormat="CODE_39">
+            <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                <zxcm:EncodingOptions Width="300" Height="300" />
+            </zxing:ZXingBarcodeImageView.BarcodeOptions>
+        </zxing:ZXingBarcodeImageView>-->
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+            <!--<Button Text="Сохранить" BackgroundColor="Green" Clicked="SaveBarecode" />-->
+            <Button Text="Удалить" BackgroundColor="Red" Clicked="DeleteBarecode" />
+            <Button Text="Отмена" BackgroundColor="DeepSkyBlue" Clicked="Cancel" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

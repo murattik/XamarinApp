@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.View.Account.UserPage" Title="Пользователь">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="UsersList" ItemsSource="{Binding Users}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding Login, StringFormat='Login: {0}'}" FontSize="Medium" />
+                                    <Label Text="{Binding Password, StringFormat='Password: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding PinCode, StringFormat='PinCode: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding UserId, StringFormat='UserId: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding MapsUserName, StringFormat='MAPS пользователь: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding SkladID, StringFormat='SkladID: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding SkladName, StringFormat='Выбранный склад: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding OrgID, StringFormat='OrgID: {0}'}" FontSize="Small" />
+                                    <Label Text="{Binding NameOrg, StringFormat='Выбранный клиент: {0}'}" FontSize="Small" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ResultScannerPage" Title="Результаты сканирования">
+    <StackLayout>
+        
+                                                                       <!--страница списка сканирований-->
+        
+        <ListView x:Name="barecodeList" ItemsSource="{Binding}" ItemSelected="OnItemSelected" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding TextResult, StringFormat='Штрихкод: {0}'}" FontSize="Large" TextColor="Black" />
+                                <Label Text="{Binding CodeGoods, StringFormat='Код товара: {0}'}" FontSize="Small" TextColor="Gray" />
+                                <Label Text="{Binding UserName, StringFormat='Пользователь: {0}'}" FontSize="Small" TextColor="Gray" />
+                                <Label Text="{Binding dateTime}" FontSize="Small" TextColor="Gray" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<Button Text="Добавить" BackgroundColor="Green" Clicked="CreateBarecode" />-->
+    </StackLayout>
+</ContentPage>
