@@ -105,19 +105,21 @@ namespace App1.View.Account
 
 
             pickerSklad.IsEnabled = true;
+            
 
             var pickerSkladData = App.UsersOrgAndSkladDatabase.GetItems().Where(a => a.NameOrg == pickerOrg.Items[pickerOrg.SelectedIndex].ToString()).OrderBy(a => a.SkladName).Select(a => a.SkladName).Distinct();
 
             try
             {
-                foreach (string data in pickerSkladData)
-                {
-                    pickerSklad.Items.Remove(data);
-                }
+                //foreach (string data in pickerSkladData)
+                //{
+                //    pickerSklad.Items.Remove(data);
+                //}
+                pickerSklad.Items.Clear();
             }
             catch
             {
-                DisplayAlert("Ошибка", "При смене клиента изменение складов завершилось с ошибкой!", "ОК");
+                DisplayAlert("Ошибка", "При смене клиента, изменение складов завершилось с ошибкой!", "ОК");
             }
 
             try

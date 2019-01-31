@@ -19,6 +19,15 @@ namespace App1.View.Rotation
         private void OK(object sender, EventArgs e)
         {
              DisplayAlert("Перемещение", "Перемещено!", "OK");
+             //RotationListPage r = new RotationListPage();
+             //var i = (Item)BindingContext;
+
+             //   r.Item.Remove(r.Item.Where(a => a.ItemID == i.ItemID).FirstOrDefault());
+                
+             //   r.Item.Add(i);
+            
+            
+
              this.Navigation.PopAsync();
         }
         private void Cancel(object sender, EventArgs e)

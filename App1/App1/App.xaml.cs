@@ -73,7 +73,14 @@ namespace App1
 
             //для активации навигации нужно использовать NavigationPage
             //MainPage = new NavigationPage(new LoginPage());
-            MainPage = new NavigationPage(new RotationListPage());
+            
+            MainPage = new NavigationPage(new RotationListPage())
+            {
+                BarBackgroundColor = Color.FromHex("#12B812"),
+                BarTextColor = Color.White,
+
+                
+            };
 
         }
 

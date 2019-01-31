@@ -6,6 +6,7 @@
         <StackLayout>
             <Label Text="{Binding Rfrom,  StringFormat='Rfrom: {0}'}" />
             <Label Text="{Binding Rto,  StringFormat='Rto: {0}'}" />
+            <Switch IsToggled="{Binding IsRotatoning}"></Switch>
             
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
                 <!--<Button Text="Сохранить" BackgroundColor="Green" Clicked="SaveGoods" />

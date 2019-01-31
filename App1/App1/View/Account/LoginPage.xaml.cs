@@ -50,7 +50,7 @@ namespace App1.View.Account
 
                 if (connectionType.ToString() == "Cellular")
                 {
-                    await DisplayAlert("Нет подключения к сети!", "Подключитесь к сети WiFi", "OK"); //если используется мобильный интернет - выводим ошибку
+                    await Application.Current.MainPage.DisplayAlert("Нет подключения к сети!", "Подключитесь к сети WiFi", "OK"); //если используется мобильный интернет - выводим ошибку
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace App1.View.Account
             else
             {
                 //если подключение не обнаружено, то ошибка
-                await DisplayAlert("Нет подключения к сети!", "Подключитесь к сети WiFi", "OK");
+                await Application.Current.MainPage.DisplayAlert("Нет подключения к сети!", "Подключитесь к сети WiFi", "OK");
             }
         }
     }
